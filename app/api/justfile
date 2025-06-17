@@ -1,0 +1,8 @@
+set unstable := true
+
+fmt:
+    just --fmt --unstable
+    deno fmt
+
+app:
+    code -r ../..

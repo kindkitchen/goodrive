@@ -1,4 +1,4 @@
-name: Deploy
+name: Deploy API
 
 on:
   workflow_dispatch:
@@ -12,6 +12,7 @@ jobs:
     environment: ${{ inputs.env }}
     permissions:
       id-token: write
+      deployments: write
       contents: write
     steps:
       - uses: extractions/setup-just@v3
@@ -24,5 +25,9 @@ jobs:
         with:
           vars_obj: ${{ toJson(vars) }}
           secrets_obj: ${{ toJson(secrets) }}
-      - run: just install
-      - run: just build
+      - run: just build_api
+      - uses: denoland/deployctl@v1
+        with:
+          project: ${{ vars.DENO_PROJECT_API }}
+          entrypoint: ./app/api/src/main.app.api.ts
+          root: .
