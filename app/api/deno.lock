@@ -3,7 +3,6 @@
   "specifiers": {
     "npm:@bogeychan/elysia-polyfills@*": "0.6.4_elysia@1.3.5__@sinclair+typebox@0.34.33__exact-mirror@0.1.2___@sinclair+typebox@0.34.33__file-type@21.0.0__openapi-types@12.1.3__typescript@5.8.3",
     "npm:@bogeychan/elysia-polyfills@latest": "0.6.4_elysia@1.3.5__@sinclair+typebox@0.34.33__exact-mirror@0.1.2___@sinclair+typebox@0.34.33__file-type@21.0.0__openapi-types@12.1.3__typescript@5.8.3",
-    "npm:@elysiajs/node@^1.3.0": "1.3.0_elysia@1.3.5__@sinclair+typebox@0.34.33__exact-mirror@0.1.2___@sinclair+typebox@0.34.33__file-type@21.0.0__openapi-types@12.1.3__typescript@5.8.3",
     "npm:@elysiajs/swagger@^1.3.0": "1.3.0_elysia@1.3.5__@sinclair+typebox@0.34.33__exact-mirror@0.1.2___@sinclair+typebox@0.34.33__file-type@21.0.0__openapi-types@12.1.3__typescript@5.8.3_openapi-types@12.1.3",
     "npm:@types/node@*": "22.15.15",
     "npm:elysia@^1.3.5": "1.3.5_@sinclair+typebox@0.34.33_exact-mirror@0.1.2__@sinclair+typebox@0.34.33_file-type@21.0.0_openapi-types@12.1.3_typescript@5.8.3"
@@ -21,13 +20,6 @@
       ],
       "bin": true
     },
-    "@elysiajs/node@1.3.0_elysia@1.3.5__@sinclair+typebox@0.34.33__exact-mirror@0.1.2___@sinclair+typebox@0.34.33__file-type@21.0.0__openapi-types@12.1.3__typescript@5.8.3": {
-      "integrity": "sha512-AA9rnL/FOBklxtJjFpUDBVZLuiKddDaV1KgnKawHzj5VgN99SzE+V0h1MOhp+8jlo2KQQJO/3aD3upyGgrfohQ==",
-      "dependencies": [
-        "@hono/node-server",
-        "elysia"
-      ]
-    },
     "@elysiajs/swagger@1.3.0_elysia@1.3.5__@sinclair+typebox@0.34.33__exact-mirror@0.1.2___@sinclair+typebox@0.34.33__file-type@21.0.0__openapi-types@12.1.3__typescript@5.8.3_openapi-types@12.1.3": {
       "integrity": "sha512-0fo3FWkDRPNYpowJvLz3jBHe9bFe6gruZUyf+feKvUEEMG9ZHptO1jolSoPE0ffFw1BgN1/wMsP19p4GRXKdfg==",
       "dependencies": [
@@ -36,12 +28,6 @@
         "elysia",
         "openapi-types",
         "pathe"
-      ]
-    },
-    "@hono/node-server@1.14.4_hono@4.7.11": {
-      "integrity": "sha512-DnxpshhYewr2q9ZN8ez/M5mmc3sucr8CT1sIgIy1bkeUXut9XWDkqHoFHRhWIQgkYnKpVRxunyhK7WzpJeJ6qQ==",
-      "dependencies": [
-        "hono"
       ]
     },
     "@isaacs/cliui@8.0.2": {
@@ -310,9 +296,6 @@
       ],
       "bin": true
     },
-    "hono@4.7.11": {
-      "integrity": "sha512-rv0JMwC0KALbbmwJDEnxvQCeJh+xbS3KEWW5PC9cMJ08Ur9xgatI0HmtgYZfOdOSOeYsp5LO2cOhdI8cLEbDEQ=="
-    },
     "hookable@5.5.3": {
       "integrity": "sha512-Yc+BQe8SvoXH1643Qez1zqLRmbA5rCL+sSmk6TVos0LWVfNIB7PGncdlId77WzLGSIB5KaWgTaNTs2lNVEI6VQ=="
     },
@@ -533,7 +516,6 @@
   },
   "workspace": {
     "dependencies": [
-      "npm:@elysiajs/node@^1.3.0",
       "npm:@elysiajs/swagger@^1.3.0",
       "npm:elysia@^1.3.5"
     ]
