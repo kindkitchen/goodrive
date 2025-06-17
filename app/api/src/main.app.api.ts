@@ -2,6 +2,8 @@ import { swagger } from "@elysiajs/swagger";
 import { Elysia } from "elysia";
 import { WebStandardAdapter } from "elysia/adapter/web-standard";
 
+let wsConnections = 0;
+
 const app = new Elysia({
     adapter: WebStandardAdapter,
     experimental: true,
@@ -11,7 +13,14 @@ const app = new Elysia({
         const { socket, response } = Deno.upgradeWebSocket(c.request);
 
         socket.onopen = () => {
+            ++wsConnections;
             socket.send("Deno is awesome!");
+            if (wsConnections > 100) {
+                socket.close();
+            }
+        };
+        socket.onclose = () => {
+            wsConnections > 0 && --wsConnections;
         };
 
         return response;

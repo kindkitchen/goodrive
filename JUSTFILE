@@ -45,10 +45,8 @@ _bump:
     done
     echo {{ BOLD + BLUE }}v$VERSION
 
-install:
-    deno install --allow-scripts
-
-build: parallel
+build_api: _parallel
+    just api task install
 
 _a:
     echo A
@@ -57,7 +55,7 @@ _b:
     echo B
 
 [script('bash')]
-parallel:
+_parallel:
     trap 'kill 0' SIGINT;
     just _a &
     just _b & 
