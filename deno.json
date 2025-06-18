@@ -1,0 +1,27 @@
+{
+  "workspace": [
+    "lib/google",
+    "lib/config",
+    "app/api"
+  ],
+  "nodeModulesDir": "auto",
+  "unstable": [
+    "kv",
+    "cron",
+    "temporal",
+    "sloppy-imports",
+    "fmt-sql",
+    "fmt-component"
+  ],
+  "compilerOptions": {
+    "strict": true
+  },
+  "tasks": {
+    "install": "deno install --allow-scripts"
+  },
+  "version": "0.11.0",
+  "imports": {
+    "@std/datetime": "jsr:@std/datetime@^0.225.5",
+    "@std/dotenv": "jsr:@std/dotenv@^0.225.5"
+  }
+}

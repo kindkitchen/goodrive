@@ -1,6 +1,6 @@
 set unstable := true
 
-export JSON_FILES_WITH_VERSION := 'deno.json app/api/deno.json'
+export JSON_FILES_WITH_VERSION := 'deno.json app/api/deno.json lib/google/deno.json lib/config/deno.json'
 
 alias format := fmt
 alias v := version
@@ -13,7 +13,7 @@ fmt:
 [script('bash')]
 [working-directory('app/api')]
 @api *args='':
-    {{ if args == '' { "code -r ." } else { "deno " + args } }}
+    {{ args }}
 
 [script('bash')]
 version:
@@ -45,8 +45,8 @@ _bump:
     done
     echo {{ BOLD + BLUE }}v$VERSION
 
-build_api: _parallel
-    just api task install
+build: _parallel
+    deno task install
 
 _a:
     echo A

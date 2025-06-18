@@ -1,0 +1,7 @@
+{
+  "name": "@lib/config",
+  "exports": {
+    ".": "./mod.lib.config.ts"
+  },
+  "version": "0.11.0"
+}

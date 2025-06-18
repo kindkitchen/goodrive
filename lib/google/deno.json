@@ -1,0 +1,10 @@
+{
+  "name": "@lib/google",
+  "exports": {
+    ".": "./mod.lib.google.ts"
+  },
+  "imports": {
+    "google-auth-library": "npm:google-auth-library@^10.1.0"
+  },
+  "version": "0.11.0"
+}
