@@ -10,7 +10,13 @@ import { plugin_config } from "./plugin_config.ts";
 
 export const router_auth = new Elysia()
     .use(plugin_config)
-    .derive(({ config: { API_HOST, GOOGLE: { client_id, secret } } }) => ({
+    .derive((
+        {
+            store: {
+                config: { API_HOST, GOOGLE: { client_id, secret } },
+            },
+        },
+    ) => ({
         gOauth: init__oauth2_client({
             client_id,
             secret,
