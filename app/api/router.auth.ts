@@ -1,6 +1,7 @@
 import {
     gen__sign_in_url,
     GOOGLE_EMAIL_SCOPE,
+    GOOGLE_GDRIVE_SCOPES,
     GOOGLE_OPEN_ID_SCOPE,
     init__oauth2_client,
 } from "@lib/google";
@@ -9,7 +10,13 @@ import { plugin_config } from "./plugin_config.ts";
 
 export const router_auth = new Elysia()
     .use(plugin_config)
-    .derive(({ config: { API_HOST, GOOGLE: { client_id, secret } } }) => ({
+    .derive((
+        {
+            store: {
+                config: { API_HOST, GOOGLE: { client_id, secret } },
+            },
+        },
+    ) => ({
         gOauth: init__oauth2_client({
             client_id,
             secret,
@@ -23,6 +30,16 @@ export const router_auth = new Elysia()
                 GOOGLE_OPEN_ID_SCOPE,
             ],
             state: "TODO",
+        });
+
+        return redirect(url);
+    })
+    .get("/google-drive", ({ redirect, gOauth }) => {
+        const url = gen__sign_in_url(gOauth, {
+            scope: GOOGLE_GDRIVE_SCOPES,
+            state: "TODO",
+            access_type: "offline",
+            include_granted_scopes: true,
         });
 
         return redirect(url);
