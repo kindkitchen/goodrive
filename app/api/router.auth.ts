@@ -7,7 +7,7 @@ import {
 import { Elysia } from "elysia";
 import { plugin_config } from "./plugin_config.ts";
 
-export const auth_router = new Elysia()
+export const router_auth = new Elysia()
     .use(plugin_config)
     .derive(({ config: { API_HOST, GOOGLE: { client_id, secret } } }) => ({
         gOauth: init__oauth2_client({

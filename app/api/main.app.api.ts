@@ -1,7 +1,7 @@
 import { swagger } from "@elysiajs/swagger";
 import { Elysia } from "elysia";
 import { WebStandardAdapter } from "elysia/adapter/web-standard";
-import { auth_router } from "./auth.router.ts";
+import { router_auth } from "./router.auth.ts";
 
 let wsConnections = 0;
 
@@ -26,7 +26,7 @@ const app = new Elysia({
 
         return response;
     })
-    .use(new Elysia({ prefix: "/auth" }).use(auth_router))
+    .use(new Elysia({ prefix: "/auth" }).use(router_auth))
     .get("/", () => "Hello Elysia");
 
 Deno.serve({ port: 4000 }, app.fetch);
