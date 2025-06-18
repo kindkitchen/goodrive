@@ -1,9 +1,6 @@
-# 0.11.0
+# 0.12.0
 
-# Switch to deno workspace mode
+# Google auth
 
-- #### app
-  - api
-- #### lib
-  - google
-  - config
+- configure config for google's variables
+- `/api/auth/google-email`

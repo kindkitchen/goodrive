@@ -60,3 +60,6 @@ _parallel:
     just _a &
     just _b & 
     wait
+
+dev_api:
+    deno run --allow-all app/api/main.app.api.ts --watch-hmr
