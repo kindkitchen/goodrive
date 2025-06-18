@@ -26,7 +26,7 @@ const app = new Elysia({
 
         return response;
     })
-    .use(new Elysia({ prefix: "/auth" }).use(router_auth))
+    .use(new Elysia({ prefix: "/api/auth" }).use(router_auth))
     .get("/", () => "Hello Elysia");
 
 Deno.serve({ port: 4000 }, app.fetch);
