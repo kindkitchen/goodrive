@@ -9,11 +9,11 @@ import { plugin_config } from "./plugin_config.ts";
 
 export const auth_router = new Elysia()
     .use(plugin_config)
-    .derive(({ config }) => ({
+    .derive(({ config: { API_HOST, GOOGLE: { client_id, secret } } }) => ({
         gOauth: init__oauth2_client({
-            client_id: config.TODO,
-            client_secret: config.TODO,
-            redirect_url: config.TODO,
+            client_id,
+            secret,
+            redirect_url: `${API_HOST}/api/auth/google-callback`,
         }),
     }))
     .get("/google-email", ({ redirect, gOauth }) => {
