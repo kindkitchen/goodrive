@@ -19,7 +19,7 @@
   "tasks": {
     "install": "deno install --allow-scripts"
   },
-  "version": "0.11.0",
+  "version": "0.12.0",
   "imports": {
     "@std/datetime": "jsr:@std/datetime@^0.225.5",
     "@std/dotenv": "jsr:@std/dotenv@^0.225.5",
