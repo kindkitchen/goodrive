@@ -5,10 +5,11 @@ import {
     GOOGLE_OPEN_ID_SCOPE,
     init__oauth2_client,
 } from "@lib/google";
+import { Schema as S } from "effect";
 import { Elysia } from "elysia";
 import { plugin_config } from "./plugin_config.ts";
 
-export const router_auth = new Elysia()
+const _router_auth = new Elysia()
     .use(plugin_config)
     .derive((
         {
@@ -44,3 +45,29 @@ export const router_auth = new Elysia()
 
         return redirect(url);
     });
+
+const schema_success__query__google_callback = S.Struct({
+    code: S.String,
+    state: S.String,
+});
+const schema_fail__query__google_callback = S.Struct({ error: S.String });
+const is_success__query__google_callback = S.is(
+    schema_success__query__google_callback,
+);
+const is_fail__query__google_callback = S.is(
+    schema_fail__query__google_callback,
+);
+_router_auth
+    .get("/google-callback", ({ redirect, gOauth, query }) => {
+        if (is_success__query__google_callback(query)) {
+            console.log("ok:", query);
+        } else if (is_fail__query__google_callback(query)) {
+            console.log("fail:", query.error);
+        } else {
+            console.log("fatality:", query);
+        }
+
+        return "TODO";
+    });
+
+export const router_auth = _router_auth;
