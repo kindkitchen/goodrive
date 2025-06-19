@@ -46,35 +46,40 @@ const _router_auth = new Elysia()
 
         return redirect(url);
     })
-    .get("/google-callback", async ({ redirect, gOauth, query }) => {
-        const result = await google_callback_handler({
-            query,
-            gOauth,
-        });
+    .get(
+        "/google-callback",
+        async (
+            { redirect, gOauth, query, store: { config: { API_HOST } } },
+        ) => {
+            const result = await google_callback_handler({
+                query,
+                gOauth,
+            });
 
-        return Match.type<typeof result>().pipe(
-            Match.tag(
-                "/google_callback_handler/Success",
-                (_res) => redirect("/"),
-            ),
-            Match.tag(
-                "/google_callback_handler/FailError",
-                (_error) => redirect("/"),
-            ),
-            Match.tag(
-                "/google_callback_handler/FailPanic",
-                (_panic) => redirect("/"),
-            ),
-            Match.tag(
-                "/google_callback_handler/FailMismatchState",
-                (_mismatch_state) => redirect("/"),
-            ),
-            Match.tag(
-                "/google_callback_handler/FailParseCode",
-                (_parsing_fail) => redirect("/"),
-            ),
-            Match.exhaustive,
-        )(result);
-    });
+            return Match.type<typeof result>().pipe(
+                Match.tag(
+                    "/google_callback_handler/Success",
+                    (_res) => redirect(API_HOST),
+                ),
+                Match.tag(
+                    "/google_callback_handler/FailError",
+                    (_error) => redirect(API_HOST),
+                ),
+                Match.tag(
+                    "/google_callback_handler/FailPanic",
+                    (_panic) => redirect(API_HOST),
+                ),
+                Match.tag(
+                    "/google_callback_handler/FailMismatchState",
+                    (_mismatch_state) => redirect(API_HOST),
+                ),
+                Match.tag(
+                    "/google_callback_handler/FailParseCode",
+                    (_parsing_fail) => redirect(API_HOST),
+                ),
+                Match.exhaustive,
+            )(result);
+        },
+    );
 
 export const router_google_oauth = _router_auth;
