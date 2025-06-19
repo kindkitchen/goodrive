@@ -1,6 +1,6 @@
 import type { OAuth2Client } from "google-auth-library";
 
-export const gen__sign_in_url = (
+export const gen_sign_in_url = (
   oauth2_client: OAuth2Client,
   params: {
     scope: string[];
