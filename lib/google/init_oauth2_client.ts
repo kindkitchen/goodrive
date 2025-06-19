@@ -1,6 +1,6 @@
 import { OAuth2Client } from "google-auth-library";
 
-export const init__oauth2_client = ({
+export const init_oauth2_client = ({
   client_id,
   secret,
   redirect_url,

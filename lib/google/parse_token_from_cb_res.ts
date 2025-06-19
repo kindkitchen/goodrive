@@ -1,7 +1,7 @@
 import type { OAuth2Client } from "google-auth-library";
 import { SECOND } from "@std/datetime";
 
-export const parse__token_from_db_res = async (
+export const parse_token_from_db_res = async (
   token: string,
   oauth2_client: OAuth2Client,
 ) => {

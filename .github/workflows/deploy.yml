@@ -29,5 +29,5 @@ jobs:
       - uses: denoland/deployctl@v1
         with:
           project: ${{ vars.DENO_PROJECT_API }}
-          entrypoint: ./app/api/main.app.api.ts
+          entrypoint: ./app/api/main_api.ts
           root: .

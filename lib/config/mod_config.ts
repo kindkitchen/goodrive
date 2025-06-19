@@ -7,7 +7,7 @@ export const EnvSchema = S.Struct({
   API_HOST: S.String,
 });
 
-export const init__config = Effect.gen(function* () {
+export const init_config = Effect.gen(function* () {
   const raw = yield* Effect.tryPromise(() => load());
   const config = yield* S.decodeUnknown(EnvSchema)(raw);
 

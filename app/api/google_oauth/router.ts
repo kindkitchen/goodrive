@@ -1,9 +1,9 @@
 import {
-    gen__sign_in_url,
+    gen_sign_in_url,
     GOOGLE_EMAIL_SCOPE,
     GOOGLE_GDRIVE_SCOPES,
     GOOGLE_OPEN_ID_SCOPE,
-    init__oauth2_client,
+    init_oauth2_client,
 } from "@lib/google";
 import { Schema as S } from "effect";
 import { Elysia } from "elysia";
@@ -18,14 +18,14 @@ const _router_auth = new Elysia()
             },
         },
     ) => ({
-        gOauth: init__oauth2_client({
+        gOauth: init_oauth2_client({
             client_id,
             secret,
             redirect_url: `${API_HOST}/api/auth/google-callback`,
         }),
     }))
     .get("/google-email", ({ redirect, gOauth }) => {
-        const url = gen__sign_in_url(gOauth, {
+        const url = gen_sign_in_url(gOauth, {
             scope: [
                 GOOGLE_EMAIL_SCOPE,
                 GOOGLE_OPEN_ID_SCOPE,
@@ -36,7 +36,7 @@ const _router_auth = new Elysia()
         return redirect(url);
     })
     .get("/google-drive", ({ redirect, gOauth }) => {
-        const url = gen__sign_in_url(gOauth, {
+        const url = gen_sign_in_url(gOauth, {
             scope: GOOGLE_GDRIVE_SCOPES,
             state: "TODO",
             access_type: "offline",
@@ -70,4 +70,4 @@ _router_auth
         return "TODO";
     });
 
-export const router__google_oauth = _router_auth;
+export const router_google_oauth = _router_auth;
