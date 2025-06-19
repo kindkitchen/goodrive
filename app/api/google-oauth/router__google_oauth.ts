@@ -7,7 +7,7 @@ import {
 } from "@lib/google";
 import { Schema as S } from "effect";
 import { Elysia } from "elysia";
-import { plugin_config } from "./plugin_config.ts";
+import { plugin_config } from "../plugin_config.ts";
 
 const _router_auth = new Elysia()
     .use(plugin_config)
@@ -70,4 +70,4 @@ _router_auth
         return "TODO";
     });
 
-export const router_auth = _router_auth;
+export const router__google_oauth = _router_auth;
