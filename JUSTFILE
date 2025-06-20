@@ -15,6 +15,10 @@ fmt:
 @api *args='':
     {{ args }}
 
+api_generate:
+    just api deno run --allow-all npm:@graphql-codegen/cli/graphql-codegen-esm
+    # just api deno run -RW scripts/post-generate.ts
+
 [script('bash')]
 version:
     head -n 1 ./VERSION.md | awk '{               
