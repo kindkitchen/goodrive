@@ -14,8 +14,10 @@ fmt:
 install:
     deno install --allow-scripts
 
+[script('bash')]
 build: _parallel
-    deno task install
+    just install
+    just gql
 
 [script('bash')]
 gql:

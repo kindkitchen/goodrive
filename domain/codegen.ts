@@ -3,7 +3,10 @@ import type { CodegenConfig } from "@graphql-codegen/cli";
 const config: CodegenConfig = {
   emitLegacyCommonJSImports: false,
   schema: ["./**/*.gql"],
-  documents: ["../**/*.{ts,tsx}"],
+  documents: [
+    "./**/*.{ts,tsx}",
+    "../app/api/**/*.ts",
+  ],
   generates: {
     // "./__gql__/": {
     //     preset: "client",

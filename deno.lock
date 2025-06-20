@@ -8,10 +8,11 @@
     "npm:@apollo/server@^4.12.2": "4.12.2_graphql@16.11.0",
     "npm:@as-integrations/cloudflare-workers@^1.1.1": "1.1.1_@apollo+server@4.12.2__graphql@16.11.0_graphql@16.11.0",
     "npm:@elysiajs/swagger@^1.3.0": "1.3.0_elysia@1.3.5__@sinclair+typebox@0.34.33__exact-mirror@0.1.2___@sinclair+typebox@0.34.33__file-type@21.0.0__openapi-types@12.1.3__typescript@5.8.3_openapi-types@12.1.3",
-    "npm:@graphql-codegen/cli@*": "5.0.7_graphql@16.11.0",
-    "npm:@graphql-codegen/cli@^5.0.7": "5.0.7_graphql@16.11.0",
+    "npm:@graphql-codegen/cli@*": "5.0.7_graphql@16.11.0_@types+node@22.15.15",
+    "npm:@graphql-codegen/cli@^5.0.7": "5.0.7_graphql@16.11.0_@types+node@22.15.15",
     "npm:@graphql-tools/mock@^9.0.23": "9.0.23_graphql@16.11.0",
     "npm:@graphql-tools/schema@^10.0.23": "10.0.23_graphql@16.11.0",
+    "npm:@types/node@*": "22.15.15",
     "npm:effect@^3.16.8": "3.16.8",
     "npm:elysia@^1.3.5": "1.3.5_@sinclair+typebox@0.34.33_exact-mirror@0.1.2__@sinclair+typebox@0.34.33_file-type@21.0.0_openapi-types@12.1.3_typescript@5.8.3",
     "npm:google-auth-library@^9.15.1": "9.15.1",
@@ -392,12 +393,12 @@
         "@graphql-tools/apollo-engine-loader",
         "@graphql-tools/code-file-loader",
         "@graphql-tools/git-loader",
-        "@graphql-tools/github-loader",
+        "@graphql-tools/github-loader@8.0.20_graphql@16.11.0",
         "@graphql-tools/graphql-file-loader",
         "@graphql-tools/json-file-loader",
         "@graphql-tools/load",
-        "@graphql-tools/prisma-loader",
-        "@graphql-tools/url-loader",
+        "@graphql-tools/prisma-loader@8.0.17_graphql@16.11.0",
+        "@graphql-tools/url-loader@8.0.31_graphql@16.11.0_ws@8.18.2",
         "@graphql-tools/utils@10.8.6_graphql@16.11.0",
         "@whatwg-node/fetch",
         "chalk",
@@ -405,7 +406,49 @@
         "debounce",
         "detect-indent",
         "graphql",
-        "graphql-config",
+        "graphql-config@5.1.5_graphql@16.11.0",
+        "inquirer",
+        "is-glob",
+        "jiti@1.21.7",
+        "json-to-pretty-yaml",
+        "listr2",
+        "log-symbols",
+        "micromatch",
+        "shell-quote",
+        "string-env-interpolation",
+        "ts-log",
+        "tslib@2.8.1",
+        "yaml",
+        "yargs"
+      ],
+      "bin": true
+    },
+    "@graphql-codegen/cli@5.0.7_graphql@16.11.0_@types+node@22.15.15": {
+      "integrity": "sha512-h/sxYvSaWtxZxo8GtaA8SvcHTyViaaPd7dweF/hmRDpaQU1o3iU3EZxlcJ+oLTunU0tSMFsnrIXm/mhXxI11Cw==",
+      "dependencies": [
+        "@babel/generator",
+        "@babel/template",
+        "@babel/types",
+        "@graphql-codegen/client-preset",
+        "@graphql-codegen/core",
+        "@graphql-codegen/plugin-helpers",
+        "@graphql-tools/apollo-engine-loader",
+        "@graphql-tools/code-file-loader",
+        "@graphql-tools/git-loader",
+        "@graphql-tools/github-loader@8.0.20_graphql@16.11.0_@types+node@22.15.15",
+        "@graphql-tools/graphql-file-loader",
+        "@graphql-tools/json-file-loader",
+        "@graphql-tools/load",
+        "@graphql-tools/prisma-loader@8.0.17_graphql@16.11.0_@types+node@22.15.15",
+        "@graphql-tools/url-loader@8.0.31_graphql@16.11.0_ws@8.18.2_@types+node@22.15.15",
+        "@graphql-tools/utils@10.8.6_graphql@16.11.0",
+        "@whatwg-node/fetch",
+        "chalk",
+        "cosmiconfig",
+        "debounce",
+        "detect-indent",
+        "graphql",
+        "graphql-config@5.1.5_graphql@16.11.0_@types+node@22.15.15",
         "inquirer",
         "is-glob",
         "jiti@1.21.7",
@@ -621,7 +664,22 @@
         "@whatwg-node/fetch",
         "@whatwg-node/promise-helpers",
         "graphql",
-        "meros",
+        "meros@1.3.1",
+        "tslib@2.8.1"
+      ]
+    },
+    "@graphql-tools/executor-http@1.3.3_graphql@16.11.0_@types+node@22.15.15": {
+      "integrity": "sha512-LIy+l08/Ivl8f8sMiHW2ebyck59JzyzO/yF9SFS4NH6MJZUezA1xThUXCDIKhHiD56h/gPojbkpcFvM2CbNE7A==",
+      "dependencies": [
+        "@graphql-hive/signal",
+        "@graphql-tools/executor-common",
+        "@graphql-tools/utils@10.8.6_graphql@16.11.0",
+        "@repeaterjs/repeater",
+        "@whatwg-node/disposablestack",
+        "@whatwg-node/fetch",
+        "@whatwg-node/promise-helpers",
+        "graphql",
+        "meros@1.3.1_@types+node@22.15.15",
         "tslib@2.8.1"
       ]
     },
@@ -663,7 +721,20 @@
     "@graphql-tools/github-loader@8.0.20_graphql@16.11.0": {
       "integrity": "sha512-Icch8bKZ1iP3zXCB9I0ded1hda9NPskSSalw7ZM21kXvLiOR5nZhdqPF65gCFkIKo+O4NR4Bp51MkKj+wl+vpg==",
       "dependencies": [
-        "@graphql-tools/executor-http",
+        "@graphql-tools/executor-http@1.3.3_graphql@16.11.0",
+        "@graphql-tools/graphql-tag-pluck",
+        "@graphql-tools/utils@10.8.6_graphql@16.11.0",
+        "@whatwg-node/fetch",
+        "@whatwg-node/promise-helpers",
+        "graphql",
+        "sync-fetch",
+        "tslib@2.8.1"
+      ]
+    },
+    "@graphql-tools/github-loader@8.0.20_graphql@16.11.0_@types+node@22.15.15": {
+      "integrity": "sha512-Icch8bKZ1iP3zXCB9I0ded1hda9NPskSSalw7ZM21kXvLiOR5nZhdqPF65gCFkIKo+O4NR4Bp51MkKj+wl+vpg==",
+      "dependencies": [
+        "@graphql-tools/executor-http@1.3.3_graphql@16.11.0_@types+node@22.15.15",
         "@graphql-tools/graphql-tag-pluck",
         "@graphql-tools/utils@10.8.6_graphql@16.11.0",
         "@whatwg-node/fetch",
@@ -762,7 +833,29 @@
     "@graphql-tools/prisma-loader@8.0.17_graphql@16.11.0": {
       "integrity": "sha512-fnuTLeQhqRbA156pAyzJYN0KxCjKYRU5bz1q/SKOwElSnAU4k7/G1kyVsWLh7fneY78LoMNH5n+KlFV8iQlnyg==",
       "dependencies": [
-        "@graphql-tools/url-loader",
+        "@graphql-tools/url-loader@8.0.31_graphql@16.11.0_ws@8.18.2",
+        "@graphql-tools/utils@10.8.6_graphql@16.11.0",
+        "@types/js-yaml",
+        "@whatwg-node/fetch",
+        "chalk",
+        "debug@4.4.1",
+        "dotenv",
+        "graphql",
+        "graphql-request",
+        "http-proxy-agent",
+        "https-proxy-agent",
+        "jose",
+        "js-yaml",
+        "lodash",
+        "scuid",
+        "tslib@2.8.1",
+        "yaml-ast-parser"
+      ]
+    },
+    "@graphql-tools/prisma-loader@8.0.17_graphql@16.11.0_@types+node@22.15.15": {
+      "integrity": "sha512-fnuTLeQhqRbA156pAyzJYN0KxCjKYRU5bz1q/SKOwElSnAU4k7/G1kyVsWLh7fneY78LoMNH5n+KlFV8iQlnyg==",
+      "dependencies": [
+        "@graphql-tools/url-loader@8.0.31_graphql@16.11.0_ws@8.18.2_@types+node@22.15.15",
         "@graphql-tools/utils@10.8.6_graphql@16.11.0",
         "@types/js-yaml",
         "@whatwg-node/fetch",
@@ -813,7 +906,25 @@
       "integrity": "sha512-QGP3py6DAdKERHO5D38Oi+6j+v0O3rkBbnLpyOo87rmIRbwE6sOkL5JeHegHs7EEJ279fBX6lMt8ry0wBMGtyA==",
       "dependencies": [
         "@graphql-tools/executor-graphql-ws",
-        "@graphql-tools/executor-http",
+        "@graphql-tools/executor-http@1.3.3_graphql@16.11.0",
+        "@graphql-tools/executor-legacy-ws",
+        "@graphql-tools/utils@10.8.6_graphql@16.11.0",
+        "@graphql-tools/wrap",
+        "@types/ws",
+        "@whatwg-node/fetch",
+        "@whatwg-node/promise-helpers",
+        "graphql",
+        "isomorphic-ws",
+        "sync-fetch",
+        "tslib@2.8.1",
+        "ws"
+      ]
+    },
+    "@graphql-tools/url-loader@8.0.31_graphql@16.11.0_ws@8.18.2_@types+node@22.15.15": {
+      "integrity": "sha512-QGP3py6DAdKERHO5D38Oi+6j+v0O3rkBbnLpyOo87rmIRbwE6sOkL5JeHegHs7EEJ279fBX6lMt8ry0wBMGtyA==",
+      "dependencies": [
+        "@graphql-tools/executor-graphql-ws",
+        "@graphql-tools/executor-http@1.3.3_graphql@16.11.0_@types+node@22.15.15",
         "@graphql-tools/executor-legacy-ws",
         "@graphql-tools/utils@10.8.6_graphql@16.11.0",
         "@graphql-tools/wrap",
@@ -1844,7 +1955,24 @@
         "@graphql-tools/json-file-loader",
         "@graphql-tools/load",
         "@graphql-tools/merge@9.0.24_graphql@16.11.0",
-        "@graphql-tools/url-loader",
+        "@graphql-tools/url-loader@8.0.31_graphql@16.11.0_ws@8.18.2",
+        "@graphql-tools/utils@10.8.6_graphql@16.11.0",
+        "cosmiconfig",
+        "graphql",
+        "jiti@2.4.2",
+        "minimatch",
+        "string-env-interpolation",
+        "tslib@2.8.1"
+      ]
+    },
+    "graphql-config@5.1.5_graphql@16.11.0_@types+node@22.15.15": {
+      "integrity": "sha512-mG2LL1HccpU8qg5ajLROgdsBzx/o2M6kgI3uAmoaXiSH9PCUbtIyLomLqUtCFaAeG2YCFsl0M5cfQ9rKmDoMVA==",
+      "dependencies": [
+        "@graphql-tools/graphql-file-loader",
+        "@graphql-tools/json-file-loader",
+        "@graphql-tools/load",
+        "@graphql-tools/merge@9.0.24_graphql@16.11.0",
+        "@graphql-tools/url-loader@8.0.31_graphql@16.11.0_ws@8.18.2_@types+node@22.15.15",
         "@graphql-tools/utils@10.8.6_graphql@16.11.0",
         "cosmiconfig",
         "graphql",
@@ -2217,6 +2345,15 @@
     },
     "meros@1.3.1": {
       "integrity": "sha512-eV7dRObfTrckdmAz4/n7pT1njIsIJXRIZkgCiX43xEsPNy4gjXQzOYYxmGcolAMtF7HyfqRuDBh3Lgs4hmhVEw=="
+    },
+    "meros@1.3.1_@types+node@22.15.15": {
+      "integrity": "sha512-eV7dRObfTrckdmAz4/n7pT1njIsIJXRIZkgCiX43xEsPNy4gjXQzOYYxmGcolAMtF7HyfqRuDBh3Lgs4hmhVEw==",
+      "dependencies": [
+        "@types/node"
+      ],
+      "optionalPeers": [
+        "@types/node"
+      ]
     },
     "methods@1.1.2": {
       "integrity": "sha512-iclAHeNqNm68zFtnZ0e+1L2yUIdvzNoauKU4WBA3VvH/vPFieF7qfRlwUZU+DA9P9bPXIS90ulxoUoCH23sV2w=="
@@ -2947,11 +3084,15 @@
           "npm:@apollo/server@^4.12.2",
           "npm:@as-integrations/cloudflare-workers@^1.1.1",
           "npm:@elysiajs/swagger@^1.3.0",
-          "npm:@graphql-codegen/cli@^5.0.7",
           "npm:@graphql-tools/mock@^9.0.23",
           "npm:@graphql-tools/schema@^10.0.23",
           "npm:elysia@^1.3.5",
           "npm:graphql@^16.11.0"
+        ]
+      },
+      "domain": {
+        "dependencies": [
+          "npm:@graphql-codegen/cli@^5.0.7"
         ]
       },
       "lib/google": {
