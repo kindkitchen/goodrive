@@ -20,11 +20,12 @@ build: _parallel
     just gql
 
 [script('bash')]
-gql:
+@gql *args='':
+    just domain pwd
     just domain \
         deno run --allow-all \
         npm:@graphql-codegen/cli/graphql-codegen-esm \
-        --watch
+        --config=./codegen.ts {{ args }}
 
 [script('bash')]
 [working-directory('domain')]

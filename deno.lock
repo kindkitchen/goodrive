@@ -8,10 +8,11 @@
     "npm:@apollo/server@^4.12.2": "4.12.2_graphql@16.11.0",
     "npm:@as-integrations/cloudflare-workers@^1.1.1": "1.1.1_@apollo+server@4.12.2__graphql@16.11.0_graphql@16.11.0",
     "npm:@elysiajs/swagger@^1.3.0": "1.3.0_elysia@1.3.5__@sinclair+typebox@0.34.33__exact-mirror@0.1.2___@sinclair+typebox@0.34.33__file-type@21.0.0__openapi-types@12.1.3__typescript@5.8.3_openapi-types@12.1.3",
-    "npm:@graphql-codegen/cli@*": "5.0.7_graphql@16.11.0_@types+node@22.15.15",
-    "npm:@graphql-codegen/cli@^5.0.7": "5.0.7_graphql@16.11.0_@types+node@22.15.15",
+    "npm:@graphql-codegen/cli@*": "5.0.7_graphql@16.11.0_@types+node@22.15.15_@parcel+watcher@2.5.1",
+    "npm:@graphql-codegen/cli@^5.0.7": "5.0.7_graphql@16.11.0_@types+node@22.15.15_@parcel+watcher@2.5.1",
     "npm:@graphql-tools/mock@^9.0.23": "9.0.23_graphql@16.11.0",
     "npm:@graphql-tools/schema@^10.0.23": "10.0.23_graphql@16.11.0",
+    "npm:@parcel/watcher@^2.5.1": "2.5.1",
     "npm:@types/node@*": "22.15.15",
     "npm:effect@^3.16.8": "3.16.8",
     "npm:elysia@^1.3.5": "1.3.5_@sinclair+typebox@0.34.33_exact-mirror@0.1.2__@sinclair+typebox@0.34.33_file-type@21.0.0_openapi-types@12.1.3_typescript@5.8.3",
@@ -462,6 +463,52 @@
         "tslib@2.8.1",
         "yaml",
         "yargs"
+      ],
+      "bin": true
+    },
+    "@graphql-codegen/cli@5.0.7_graphql@16.11.0_@types+node@22.15.15_@parcel+watcher@2.5.1": {
+      "integrity": "sha512-h/sxYvSaWtxZxo8GtaA8SvcHTyViaaPd7dweF/hmRDpaQU1o3iU3EZxlcJ+oLTunU0tSMFsnrIXm/mhXxI11Cw==",
+      "dependencies": [
+        "@babel/generator",
+        "@babel/template",
+        "@babel/types",
+        "@graphql-codegen/client-preset",
+        "@graphql-codegen/core",
+        "@graphql-codegen/plugin-helpers",
+        "@graphql-tools/apollo-engine-loader",
+        "@graphql-tools/code-file-loader",
+        "@graphql-tools/git-loader",
+        "@graphql-tools/github-loader@8.0.20_graphql@16.11.0_@types+node@22.15.15",
+        "@graphql-tools/graphql-file-loader",
+        "@graphql-tools/json-file-loader",
+        "@graphql-tools/load",
+        "@graphql-tools/prisma-loader@8.0.17_graphql@16.11.0_@types+node@22.15.15",
+        "@graphql-tools/url-loader@8.0.31_graphql@16.11.0_ws@8.18.2_@types+node@22.15.15",
+        "@graphql-tools/utils@10.8.6_graphql@16.11.0",
+        "@parcel/watcher",
+        "@whatwg-node/fetch",
+        "chalk",
+        "cosmiconfig",
+        "debounce",
+        "detect-indent",
+        "graphql",
+        "graphql-config@5.1.5_graphql@16.11.0_@types+node@22.15.15",
+        "inquirer",
+        "is-glob",
+        "jiti@1.21.7",
+        "json-to-pretty-yaml",
+        "listr2",
+        "log-symbols",
+        "micromatch",
+        "shell-quote",
+        "string-env-interpolation",
+        "ts-log",
+        "tslib@2.8.1",
+        "yaml",
+        "yargs"
+      ],
+      "optionalPeers": [
+        "@parcel/watcher"
       ],
       "bin": true
     },
@@ -1014,6 +1061,96 @@
         "@nodelib/fs.scandir",
         "fastq"
       ]
+    },
+    "@parcel/watcher-android-arm64@2.5.1": {
+      "integrity": "sha512-KF8+j9nNbUN8vzOFDpRMsaKBHZ/mcjEjMToVMJOhTozkDonQFFrRcfdLWn6yWKCmJKmdVxSgHiYvTCef4/qcBA==",
+      "os": ["android"],
+      "cpu": ["arm64"]
+    },
+    "@parcel/watcher-darwin-arm64@2.5.1": {
+      "integrity": "sha512-eAzPv5osDmZyBhou8PoF4i6RQXAfeKL9tjb3QzYuccXFMQU0ruIc/POh30ePnaOyD1UXdlKguHBmsTs53tVoPw==",
+      "os": ["darwin"],
+      "cpu": ["arm64"]
+    },
+    "@parcel/watcher-darwin-x64@2.5.1": {
+      "integrity": "sha512-1ZXDthrnNmwv10A0/3AJNZ9JGlzrF82i3gNQcWOzd7nJ8aj+ILyW1MTxVk35Db0u91oD5Nlk9MBiujMlwmeXZg==",
+      "os": ["darwin"],
+      "cpu": ["x64"]
+    },
+    "@parcel/watcher-freebsd-x64@2.5.1": {
+      "integrity": "sha512-SI4eljM7Flp9yPuKi8W0ird8TI/JK6CSxju3NojVI6BjHsTyK7zxA9urjVjEKJ5MBYC+bLmMcbAWlZ+rFkLpJQ==",
+      "os": ["freebsd"],
+      "cpu": ["x64"]
+    },
+    "@parcel/watcher-linux-arm-glibc@2.5.1": {
+      "integrity": "sha512-RCdZlEyTs8geyBkkcnPWvtXLY44BCeZKmGYRtSgtwwnHR4dxfHRG3gR99XdMEdQ7KeiDdasJwwvNSF5jKtDwdA==",
+      "os": ["linux"],
+      "cpu": ["arm"]
+    },
+    "@parcel/watcher-linux-arm-musl@2.5.1": {
+      "integrity": "sha512-6E+m/Mm1t1yhB8X412stiKFG3XykmgdIOqhjWj+VL8oHkKABfu/gjFj8DvLrYVHSBNC+/u5PeNrujiSQ1zwd1Q==",
+      "os": ["linux"],
+      "cpu": ["arm"]
+    },
+    "@parcel/watcher-linux-arm64-glibc@2.5.1": {
+      "integrity": "sha512-LrGp+f02yU3BN9A+DGuY3v3bmnFUggAITBGriZHUREfNEzZh/GO06FF5u2kx8x+GBEUYfyTGamol4j3m9ANe8w==",
+      "os": ["linux"],
+      "cpu": ["arm64"]
+    },
+    "@parcel/watcher-linux-arm64-musl@2.5.1": {
+      "integrity": "sha512-cFOjABi92pMYRXS7AcQv9/M1YuKRw8SZniCDw0ssQb/noPkRzA+HBDkwmyOJYp5wXcsTrhxO0zq1U11cK9jsFg==",
+      "os": ["linux"],
+      "cpu": ["arm64"]
+    },
+    "@parcel/watcher-linux-x64-glibc@2.5.1": {
+      "integrity": "sha512-GcESn8NZySmfwlTsIur+49yDqSny2IhPeZfXunQi48DMugKeZ7uy1FX83pO0X22sHntJ4Ub+9k34XQCX+oHt2A==",
+      "os": ["linux"],
+      "cpu": ["x64"]
+    },
+    "@parcel/watcher-linux-x64-musl@2.5.1": {
+      "integrity": "sha512-n0E2EQbatQ3bXhcH2D1XIAANAcTZkQICBPVaxMeaCVBtOpBZpWJuf7LwyWPSBDITb7In8mqQgJ7gH8CILCURXg==",
+      "os": ["linux"],
+      "cpu": ["x64"]
+    },
+    "@parcel/watcher-win32-arm64@2.5.1": {
+      "integrity": "sha512-RFzklRvmc3PkjKjry3hLF9wD7ppR4AKcWNzH7kXR7GUe0Igb3Nz8fyPwtZCSquGrhU5HhUNDr/mKBqj7tqA2Vw==",
+      "os": ["win32"],
+      "cpu": ["arm64"]
+    },
+    "@parcel/watcher-win32-ia32@2.5.1": {
+      "integrity": "sha512-c2KkcVN+NJmuA7CGlaGD1qJh1cLfDnQsHjE89E60vUEMlqduHGCdCLJCID5geFVM0dOtA3ZiIO8BoEQmzQVfpQ==",
+      "os": ["win32"],
+      "cpu": ["ia32"]
+    },
+    "@parcel/watcher-win32-x64@2.5.1": {
+      "integrity": "sha512-9lHBdJITeNR++EvSQVUcaZoWupyHfXe1jZvGZ06O/5MflPcuPLtEphScIBL+AiCWBO46tDSHzWyD0uDmmZqsgA==",
+      "os": ["win32"],
+      "cpu": ["x64"]
+    },
+    "@parcel/watcher@2.5.1": {
+      "integrity": "sha512-dfUnCxiN9H4ap84DvD2ubjw+3vUNpstxa0TneY/Paat8a3R4uQZDLSvWjmznAY/DoahqTHl9V46HF/Zs3F29pg==",
+      "dependencies": [
+        "detect-libc",
+        "is-glob",
+        "micromatch",
+        "node-addon-api"
+      ],
+      "optionalDependencies": [
+        "@parcel/watcher-android-arm64",
+        "@parcel/watcher-darwin-arm64",
+        "@parcel/watcher-darwin-x64",
+        "@parcel/watcher-freebsd-x64",
+        "@parcel/watcher-linux-arm-glibc",
+        "@parcel/watcher-linux-arm-musl",
+        "@parcel/watcher-linux-arm64-glibc",
+        "@parcel/watcher-linux-arm64-musl",
+        "@parcel/watcher-linux-x64-glibc",
+        "@parcel/watcher-linux-x64-musl",
+        "@parcel/watcher-win32-arm64",
+        "@parcel/watcher-win32-ia32",
+        "@parcel/watcher-win32-x64"
+      ],
+      "scripts": true
     },
     "@protobufjs/aspromise@1.1.2": {
       "integrity": "sha512-j+gKExEuLmKwvz3OgROXtrJ2UG2x8Ch2YZUxahh+s1F2HZ+wAceUNLkvy6zKCPVRkU++ZWQrdxsUeQXmcg4uoQ=="
@@ -1583,6 +1720,10 @@
     },
     "detect-indent@6.1.0": {
       "integrity": "sha512-reYkTUJAZb9gUuZ2RvVCNhVHdg62RHnJ7WJl8ftMi4diZ6NWlciOzQN88pUhSELEwflJht4oQDv0F0BMlwaYtA=="
+    },
+    "detect-libc@1.0.3": {
+      "integrity": "sha512-pGjwhsmsp4kL2RTz08wcOlGN83otlqHeD/Z5T8GXZB+/YcpQ/dgo+lbU8ZsGxV0HIvqqxo9l7mqYwyYMD9bKDg==",
+      "bin": true
     },
     "dir-glob@3.0.1": {
       "integrity": "sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==",
@@ -2416,6 +2557,9 @@
     "node-abort-controller@3.1.1": {
       "integrity": "sha512-AGK2yQKIjRuqnc6VkX2Xj5d+QW8xZ87pa1UK6yA6ouUyuxfHuMP6umE5QK7UmTeOAymo+Zx1Fxiuw9rVx8taHQ=="
     },
+    "node-addon-api@7.1.1": {
+      "integrity": "sha512-5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ=="
+    },
     "node-domexception@1.0.0": {
       "integrity": "sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==",
       "deprecated": true
@@ -3092,7 +3236,8 @@
       },
       "domain": {
         "dependencies": [
-          "npm:@graphql-codegen/cli@^5.0.7"
+          "npm:@graphql-codegen/cli@^5.0.7",
+          "npm:@parcel/watcher@^2.5.1"
         ]
       },
       "lib/google": {

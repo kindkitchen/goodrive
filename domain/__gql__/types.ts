@@ -30,7 +30,6 @@ export type ApiKey = {
   _id: Scalars["ID"]["output"];
   bucket: Bucket;
   bucket_id: Scalars["ID"]["output"];
-  details: Scalars["String"]["output"];
 };
 
 export type Bucket = {

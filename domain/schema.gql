@@ -7,7 +7,6 @@ type ApiKey {
   _id: ID!
   bucket: Bucket!
   bucket_id: ID!
-  details: String!
 }
 
 type Bucket {

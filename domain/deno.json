@@ -4,7 +4,8 @@
     ".": "./index.ts"
   },
   "imports": {
-    "@graphql-codegen/cli": "npm:@graphql-codegen/cli@^5.0.7"
+    "@graphql-codegen/cli": "npm:@graphql-codegen/cli@^5.0.7",
+    "@parcel/watcher": "npm:@parcel/watcher@^2.5.1"
   },
   "exclude": [
     "__gql__"

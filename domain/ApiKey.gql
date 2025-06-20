@@ -2,5 +2,4 @@ type ApiKey {
   _id: ID!
   bucket_id: ID!
   bucket: Bucket!
-  details: String!
 }
