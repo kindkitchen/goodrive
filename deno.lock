@@ -3,9 +3,12 @@
   "specifiers": {
     "jsr:@std/datetime@~0.225.5": "0.225.5",
     "jsr:@std/dotenv@~0.225.5": "0.225.5",
+    "jsr:@std/fs@^1.0.18": "1.0.18",
+    "jsr:@std/path@^1.1.0": "1.1.0",
     "npm:@apollo/server@^4.12.2": "4.12.2_graphql@16.11.0",
     "npm:@as-integrations/cloudflare-workers@^1.1.1": "1.1.1_@apollo+server@4.12.2__graphql@16.11.0_graphql@16.11.0",
     "npm:@elysiajs/swagger@^1.3.0": "1.3.0_elysia@1.3.5__@sinclair+typebox@0.34.33__exact-mirror@0.1.2___@sinclair+typebox@0.34.33__file-type@21.0.0__openapi-types@12.1.3__typescript@5.8.3_openapi-types@12.1.3",
+    "npm:@graphql-codegen/cli@*": "5.0.7_graphql@16.11.0",
     "npm:@graphql-codegen/cli@^5.0.7": "5.0.7_graphql@16.11.0",
     "npm:@graphql-tools/mock@^9.0.23": "9.0.23_graphql@16.11.0",
     "npm:@graphql-tools/schema@^10.0.23": "10.0.23_graphql@16.11.0",
@@ -20,6 +23,15 @@
     },
     "@std/dotenv@0.225.5": {
       "integrity": "9ce6f9d0ec3311f74a32535aa1b8c62ed88b1ab91b7f0815797d77a6f60c922f"
+    },
+    "@std/fs@1.0.18": {
+      "integrity": "24bcad99eab1af4fde75e05da6e9ed0e0dce5edb71b7e34baacf86ffe3969f3a",
+      "dependencies": [
+        "jsr:@std/path"
+      ]
+    },
+    "@std/path@1.1.0": {
+      "integrity": "ddc94f8e3c275627281cbc23341df6b8bcc874d70374f75fec2533521e3d6886"
     }
   },
   "npm": {
@@ -2925,6 +2937,8 @@
     "dependencies": [
       "jsr:@std/datetime@~0.225.5",
       "jsr:@std/dotenv@~0.225.5",
+      "jsr:@std/fs@^1.0.18",
+      "jsr:@std/path@^1.1.0",
       "npm:effect@^3.16.8"
     ],
     "members": {

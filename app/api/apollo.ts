@@ -4,8 +4,11 @@ import { ApolloServerPluginLandingPageLocalDefault } from "@apollo/server/plugin
 import { startServerAndCreateCloudflareWorkersHandler } from "@as-integrations/cloudflare-workers";
 import { addMocksToSchema } from "@graphql-tools/mock";
 import { makeExecutableSchema } from "@graphql-tools/schema";
+import { join } from "@std/path";
 
-const typeDefs = ``;
+const typeDefs =
+    await Deno.readTextFile(join(Deno.cwd(), "app/api/schema.gql")) ||
+    `# graphql type Query {}`;
 
 const apollo = new ApolloServer({
     schema: addMocksToSchema({
@@ -17,3 +20,12 @@ const apollo = new ApolloServer({
         ApolloServerPluginLandingPageLocalDefault(),
     ],
 });
+
+export const apollo_handler = startServerAndCreateCloudflareWorkersHandler(
+    apollo,
+    {
+        context: async ({ env, request, ctx }) => {
+            return {};
+        },
+    },
+);
