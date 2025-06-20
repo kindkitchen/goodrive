@@ -1,10 +1,11 @@
+import { join } from "@std/path";
 import { Effect } from "effect";
 export * from "./__gql__/types.ts";
 
 const graphql = String.raw;
 
 export const typeDefs = Effect
-  .tryPromise(() => Deno.readTextFile("./schema.gql"))
+  .tryPromise(() => Deno.readTextFile(join(Deno.cwd(), "domain", "schema.gql")))
   .pipe(Effect.match({
     onSuccess: (t) => t,
     onFailure: (err) => {

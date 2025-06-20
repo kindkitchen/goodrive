@@ -15,13 +15,12 @@ install:
     deno install --allow-scripts
 
 [script('bash')]
-build: _parallel
+build:
     just install
     just gql
 
 [script('bash')]
-@gql *args='':
-    just domain pwd
+gql *args='':
     just domain \
         deno run --allow-all \
         npm:@graphql-codegen/cli/graphql-codegen-esm \
@@ -67,17 +66,12 @@ _bump:
     done
     echo {{ BOLD + BLUE }}v$VERSION
 
-_a:
-    echo A
-
-_b:
-    echo B
-
 [script('bash')]
-_parallel:
+dev:
+    just gql
     trap 'kill 0' SIGINT;
-    just _a &
-    just _b & 
+    just gql --watch &
+    just dev_api & 
     wait
 
 dev_api:
