@@ -1,8 +1,9 @@
 {
   "workspace": [
+    "domain",
+    "app/api",
     "lib/google",
-    "lib/config",
-    "app/api"
+    "lib/config"
   ],
   "nodeModulesDir": "auto",
   "unstable": [
@@ -14,10 +15,8 @@
     "fmt-component"
   ],
   "compilerOptions": {
-    "strict": true
-  },
-  "tasks": {
-    "install": "deno install --allow-scripts"
+    "strict": true,
+    "exactOptionalPropertyTypes": true
   },
   "version": "0.12.3",
   "imports": {

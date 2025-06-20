@@ -4,20 +4,35 @@ export JSON_FILES_WITH_VERSION := 'deno.json app/api/deno.json lib/google/deno.j
 
 alias format := fmt
 alias v := version
+alias i := install
 
 fmt:
     just --fmt --unstable
     deno fmt --unstable-component --unstable-sql --ignore=app/api
     deno fmt --config app/api/deno.json
 
+install:
+    deno install --allow-scripts
+
+build: _parallel
+    deno task install
+
+[script('bash')]
+gql:
+    just domain \
+        deno run --allow-all \
+        npm:@graphql-codegen/cli/graphql-codegen-esm \
+        --watch
+
+[script('bash')]
+[working-directory('domain')]
+@domain *args='':
+    {{ args }}
+
 [script('bash')]
 [working-directory('app/api')]
 @api *args='':
     {{ args }}
-
-api_generate:
-    just api deno run --allow-all npm:@graphql-codegen/cli/graphql-codegen-esm
-    # just api deno run -RW scripts/post-generate.ts
 
 [script('bash')]
 version:
@@ -48,9 +63,6 @@ _bump:
       jq ".version=\"$VERSION\"" "$FILE" > tmp.$$.json && mv tmp.$$.json "$FILE"
     done
     echo {{ BOLD + BLUE }}v$VERSION
-
-build: _parallel
-    deno task install
 
 _a:
     echo A
