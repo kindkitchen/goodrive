@@ -1,8 +1,9 @@
 {
   "workspace": [
+    "domain",
+    "app/api",
     "lib/google",
-    "lib/config",
-    "app/api"
+    "lib/config"
   ],
   "nodeModulesDir": "auto",
   "unstable": [
@@ -14,15 +15,15 @@
     "fmt-component"
   ],
   "compilerOptions": {
-    "strict": true
-  },
-  "tasks": {
-    "install": "deno install --allow-scripts"
+    "strict": true,
+    "exactOptionalPropertyTypes": true
   },
   "version": "0.12.3",
   "imports": {
     "@std/datetime": "jsr:@std/datetime@^0.225.5",
     "@std/dotenv": "jsr:@std/dotenv@^0.225.5",
+    "@std/fs": "jsr:@std/fs@^1.0.18",
+    "@std/path": "jsr:@std/path@^1.1.0",
     "effect": "npm:effect@^3.16.8"
   }
 }

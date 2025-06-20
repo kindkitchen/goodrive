@@ -1,6 +1,7 @@
 import { swagger } from "@elysiajs/swagger";
 import { Elysia } from "elysia";
 import { WebStandardAdapter } from "elysia/adapter/web-standard";
+import { apollo_handler } from "./apollo.ts";
 import { router_google_oauth } from "./google_oauth/router.ts";
 
 let wsConnections = 0;
@@ -10,6 +11,7 @@ const app = new Elysia({
     experimental: true,
 })
     .use(swagger())
+    .all("/graphql", ({ request }) => apollo_handler(request, {}, {}))
     .get("/ws", (c) => {
         const { socket, response } = Deno.upgradeWebSocket(c.request);
 

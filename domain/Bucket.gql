@@ -1,0 +1,6 @@
+type Bucket {
+  email: String!
+  user_id: ID!
+  user: User!
+  keys: [ApiKey!]! 
+}
