@@ -6,19 +6,27 @@
     "effect": "npm:effect@^3.16.10"
   },
   "nodeModulesDir": "auto",
-  "exclude": [
-    "__gql__"
-  ],
-  "unstable": [
-    "kv",
-    "cron",
-    "temporal",
-    "sloppy-imports",
-    "fmt-sql",
-    "fmt-component"
-  ],
-  "compilerOptions": {
-    "strict": true,
-    "exactOptionalPropertyTypes": true
-  }
+    "exclude": [
+        "__gql__"
+    ],
+    "unstable": [
+        "kv",
+        "cron",
+        "temporal",
+        "sloppy-imports",
+        "fmt-sql",
+        "fmt-component"
+    ],
+    "compilerOptions": {
+        "strict": true,
+        "exactOptionalPropertyTypes": true
+    },
+    "fmt": {
+        "semiColons": false,
+        "indentWidth": 4,
+        "lineWidth": 60,
+        "trailingCommas": "never",
+        "useBraces": "always",
+        "typeLiteral.separatorKind": "comma"
+    }
 }

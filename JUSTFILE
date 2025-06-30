@@ -21,6 +21,7 @@ _______________:
 [script('bash')]
 fmt:
     just format_all_justfiles
+    just api just fmt
 
 [script('bash')]
 api *args="":
