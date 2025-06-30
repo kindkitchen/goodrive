@@ -16,3 +16,9 @@ home:
 [script('bash')]
 install:
     deno install --allow-scripts
+
+[script('bash')]
+gql *args='':
+    deno run --allow-all \
+    npm:@graphql-codegen/cli/graphql-codegen-esm \
+    --config=./codegen.ts {{ args }}

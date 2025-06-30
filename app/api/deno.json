@@ -2,7 +2,23 @@
   "version": "0.1.0",
   "imports": {
     "@graphql-codegen/cli": "npm:@graphql-codegen/cli@^5.0.7",
-    "@parcel/watcher": "npm:@parcel/watcher@^2.5.1"
+    "@parcel/watcher": "npm:@parcel/watcher@^2.5.1",
+    "effect": "npm:effect@^3.16.10"
   },
-  "nodeModulesDir": "auto"
+  "nodeModulesDir": "auto",
+  "exclude": [
+    "__gql__"
+  ],
+  "unstable": [
+    "kv",
+    "cron",
+    "temporal",
+    "sloppy-imports",
+    "fmt-sql",
+    "fmt-component"
+  ],
+  "compilerOptions": {
+    "strict": true,
+    "exactOptionalPropertyTypes": true
+  }
 }
