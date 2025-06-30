@@ -1,11 +1,18 @@
 {
-  "version": "0.1.0",
-  "imports": {
-    "@graphql-codegen/cli": "npm:@graphql-codegen/cli@^5.0.7",
-    "@parcel/watcher": "npm:@parcel/watcher@^2.5.1",
-    "effect": "npm:effect@^3.16.10"
-  },
-  "nodeModulesDir": "auto",
+    "version": "0.1.0",
+    "imports": {
+        "@apollo/server": "npm:@apollo/server@^4.12.2",
+        "@as-integrations/cloudflare-workers": "npm:@as-integrations/cloudflare-workers@^1.1.1",
+        "@graphql-codegen/cli": "npm:@graphql-codegen/cli@^5.0.7",
+        "@graphql-tools/mock": "npm:@graphql-tools/mock@^9.0.23",
+        "@graphql-tools/schema": "npm:@graphql-tools/schema@^10.0.23",
+        "@parcel/watcher": "npm:@parcel/watcher@^2.5.1",
+        "@std/dotenv": "jsr:@std/dotenv@^0.225.5",
+        "@std/fs": "jsr:@std/fs@^1.0.18",
+        "@std/path": "jsr:@std/path@^1.1.0",
+        "effect": "npm:effect@^3.16.10"
+    },
+    "nodeModulesDir": "auto",
     "exclude": [
         "__gql__"
     ],
