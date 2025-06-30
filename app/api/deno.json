@@ -1,3 +1,8 @@
 {
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "imports": {
+    "@graphql-codegen/cli": "npm:@graphql-codegen/cli@^5.0.7",
+    "@parcel/watcher": "npm:@parcel/watcher@^2.5.1"
+  },
+  "nodeModulesDir": "auto"
 }
