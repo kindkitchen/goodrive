@@ -33,5 +33,5 @@ gql *args='':
 start:
     deno run -A main.ts
 
-dev:
-    deno run -A --watch-hmr main.ts
+dev variant="":
+    deno run -A --watch-hmr main{{ variant }}.ts
