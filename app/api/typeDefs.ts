@@ -1,6 +1,6 @@
 import { join } from "@std/path"
 import { Data, Effect } from "effect"
-export * from "./__gql__/types.ts"
+export * from "./__gql/types.ts"
 
 export const typeDefs = Effect
     .fn("generate typeDefs")(function* () {
