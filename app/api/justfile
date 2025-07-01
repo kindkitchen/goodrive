@@ -7,6 +7,7 @@ alias i := install
 _:
     just --list
 
+[doc]
 fmt:
     deno fmt
     just --fmt
@@ -17,6 +18,7 @@ home:
     OPEN_FOLDER_IN_EDITOR="{{ OPEN_FOLDER_IN_EDITOR }}"
     $OPEN_FOLDER_IN_EDITOR .
 
+[doc]
 [script('bash')]
 install:
     deno install --allow-scripts
@@ -26,3 +28,10 @@ gql *args='':
     deno run --allow-all \
     npm:@graphql-codegen/cli/graphql-codegen-esm \
     --config=./codegen.ts {{ args }}
+
+[doc]
+start:
+    deno run -A main.ts
+
+dev:
+    deno run -A --watch-hmr main.ts

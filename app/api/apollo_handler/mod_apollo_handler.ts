@@ -1,4 +1,4 @@
-import {} from "../__gql__/types.ts"
+import {} from "../__gql/types.ts"
 import { ApolloServer } from "@apollo/server"
 import { ApolloServerPluginLandingPageLocalDefault } from "@apollo/server/plugin/landingPage/default"
 // @ts-types="@as-integrations/cloudflare-workers/src/index.ts"
