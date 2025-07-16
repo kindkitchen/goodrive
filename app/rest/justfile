@@ -16,3 +16,7 @@ home:
 [script('bash')]
 install:
     deno install --allow-scripts
+
+fmt:
+    just --fmt
+    deno fmt
