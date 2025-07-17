@@ -7,16 +7,13 @@ await Effect.runPromise(Effect.gen(function* () {
   const mode = yield* Config.string("MODE").pipe(Config.withDefault("local"));
 
   if (mode === "local") {
-    const port = yield* Config.number("PORT").pipe(
-      Config.withDefault(4000),
-    );
-    const program = yield* Effect.tryPromise({
-      try: () => import("./local_program.ts"),
+    const { elysia, port } = yield* Effect.tryPromise({
+      try: () => import("./local_mode_program.ts"),
       catch: () =>
         new FailBootstrap({ message: "Unable to import local implementation" }),
-    }).pipe(Effect.flatMap(({ local_program }) => local_program));
+    }).pipe(Effect.flatMap(({ local_mode_program: p }) => p));
 
-    void Deno.serve({ port }, program.fetch);
+    void Deno.serve({ port }, elysia.fetch);
   } else {
     yield* Effect.die(new FailBootstrap({ message: "Unsupported mode" }));
   }
