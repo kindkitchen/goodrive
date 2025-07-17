@@ -1,7 +1,7 @@
 import { Effect } from "effect";
-import { POST_api_auth_google_signIn } from "./api/POST_api_auth_google_signIn.ts";
-import { LocalModeService } from "./LocalModeService.ts";
-import { server } from "./server.ts";
+import { POST_api_auth_google_signIn } from "../api/POST_api_auth_google_signIn.ts";
+import { LocalModeService } from "./Service.ts";
+import { server } from "../server.ts";
 
 export const local_mode_program = Effect.gen(function* () {
   const {

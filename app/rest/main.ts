@@ -8,7 +8,7 @@ await Effect.runPromise(Effect.gen(function* () {
 
   if (mode === "local") {
     const { elysia, port } = yield* Effect.tryPromise({
-      try: () => import("./local_mode_program.ts"),
+      try: () => import("./mode_local/program.ts"),
       catch: () =>
         new FailBootstrap({ message: "Unable to import local implementation" }),
     }).pipe(Effect.flatMap(({ local_mode_program: p }) => p));
