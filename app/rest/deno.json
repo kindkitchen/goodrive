@@ -6,5 +6,10 @@
   },
   "tasks": {
     "local": "deno run -EN --watch-hmr main.ts"
-  }
+  },
+  "unstable": [
+    "kv",
+    "fmt-component",
+    "cron"
+  ]
 }
