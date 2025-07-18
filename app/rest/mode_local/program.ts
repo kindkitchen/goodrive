@@ -3,6 +3,7 @@ import { Api_auth_google_callback } from "../api/Api_auth_google_callback.ts";
 import { Api_auth_google_signIn } from "../api/Api_auth_google_signIn.ts";
 import { server } from "../server.ts";
 import { LocalModeService } from "./Service.ts";
+import { Api_auth_google_drive } from "../api/Api_auth_google_drive.ts";
 
 export const local_mode_program = Effect.gen(function* () {
   const {
@@ -29,6 +30,9 @@ export const local_mode_program = Effect.gen(function* () {
         }
         return { redirect_uri: `http://localhost:${port}` };
       },
+    }),
+    Effect.provideService(Api_auth_google_drive, {
+      redirect_uri: `http://localhost:${port}`,
     }),
   );
 

@@ -1,8 +1,11 @@
-const html = String.raw;
+import { Elysia } from "elysia";
 
+const html = String.raw;
+const redirect_pathname =
+  "/__local_mode__/google-signin-redirect-mock" as const;
 const method = "GET";
 const action = "/api/auth/google-callback";
-export const google_mock_signin_redirect_Page = html`
+const page = html`
   <html>
     <head>
       <meta charset="UTF-8" />
@@ -27,3 +30,18 @@ export const google_mock_signin_redirect_Page = html`
     </body>
   </html>
 `;
+const redirect_handler = new Elysia().get(
+  redirect_pathname,
+  ({ query }) => {
+    return new Response(`${page}${"#"}${query}`, {
+      headers: {
+        "content-type": "text/html",
+      },
+    });
+  },
+);
+
+export const google_signin_mock = {
+  redirect_pathname,
+  redirect_handler,
+};
