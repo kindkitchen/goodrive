@@ -15,7 +15,7 @@
       "runtimeArgs": [
         "run",
         "--inspect-wait",
-        "-ENW",
+        "-A",
         "--watch-hmr",
         "--unstable-kv",
         "--unstable-cron"

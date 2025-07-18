@@ -6,7 +6,7 @@
     "google-auth-library": "npm:google-auth-library@^9.15.1"
   },
   "tasks": {
-    "local": "deno run -EN --watch-hmr main.ts"
+    "local": "deno run -A --watch-hmr main.ts"
   },
   "unstable": [
     "kv",
