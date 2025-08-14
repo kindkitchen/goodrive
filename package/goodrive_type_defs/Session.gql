@@ -1,0 +1,21 @@
+interface Session {
+  _id: ID!
+  created_at: String!
+  updated_at: String!
+}
+
+type SessionGhost implements Session {
+  _id: ID!
+  created_at: String!
+  updated_at: String!
+}
+
+type SessionNormal implements Session {
+  _id: ID!
+  created_at: String!
+  updated_at: String!
+  user_id: ID!
+  user: User!
+  active_bucket_id: ID
+  active_bucket: Bucket
+}
