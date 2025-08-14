@@ -7,7 +7,16 @@
     "start": "deno serve -A _fresh/server.js",
     "update": "deno run -A -r jsr:@fresh/update ."
   },
+  "unstable": ["kv", "cron", "fmt-component", "raw-imports"],
+  "fmt": {
+    "exclude": [
+      "codegen/*"
+    ]
+  },
   "lint": {
+    "exclude": [
+      "codegen/*"
+    ],
     "rules": {
       "tags": [
         "fresh",
@@ -19,6 +28,8 @@
     "**/_fresh/*"
   ],
   "imports": {
+    "@graphql-codegen/cli": "npm:@graphql-codegen/cli@^5.0.7",
+    "@graphql-codegen/typescript-resolvers": "npm:@graphql-codegen/typescript-resolvers@^4.5.1",
     "fresh": "jsr:@fresh/core@^2.0.0-alpha.58",
     "preact": "npm:preact@^10.27.0",
     "@preact/signals": "npm:@preact/signals@^2.2.1",

@@ -8,6 +8,11 @@ _:
     just --list
 
 [script('bash')]
+fmt:
+    just --fmt
+    deno fmt
+
+[script('bash')]
 home *args="":
     cd {{ ROOT }}
     OPEN_FOLDER_IN_EDITOR="{{ OPEN_FOLDER_IN_EDITOR }}"
@@ -16,3 +21,6 @@ home *args="":
 [script('bash')]
 install:
     deno install --allow-scripts
+
+gql:
+    deno run --allow-all npm:@graphql-codegen/cli/graphql-codegen-esm
