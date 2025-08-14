@@ -28,6 +28,15 @@ check *args:
     COMMAND="deno check {{ args }}"
 
 [script('bash')]
+goodrive_main *args="":
+    cd {{ ROOT }}
+    cd app/goodrive_main
+    OPEN_FOLDER_IN_EDITOR="{{ OPEN_FOLDER_IN_EDITOR }}"
+    {{ if args == "cd" { "$OPEN_FOLDER_IN_EDITOR ." } else { args } }}
+
+alias main := goodrive_main
+
+[script('bash')]
 rest *args="":
     cd {{ ROOT }}
     cd app/rest
