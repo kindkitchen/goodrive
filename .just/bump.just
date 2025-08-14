@@ -3,6 +3,7 @@ ROOT := `cd ../.. && pwd`
 _:
 
 # TODO: complete with your paths to .version json file splitting via space
+
 export JSON_FILES_WITH_VERSION := ''
 
 bump: _pre_bump _bump

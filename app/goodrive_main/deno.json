@@ -30,6 +30,7 @@
   "imports": {
     "@graphql-codegen/cli": "npm:@graphql-codegen/cli@^5.0.7",
     "@graphql-codegen/typescript-resolvers": "npm:@graphql-codegen/typescript-resolvers@^4.5.1",
+    "effect": "npm:effect@^3.17.7",
     "fresh": "jsr:@fresh/core@^2.0.0-alpha.58",
     "preact": "npm:preact@^10.27.0",
     "@preact/signals": "npm:@preact/signals@^2.2.1",

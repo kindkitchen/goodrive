@@ -22,6 +22,7 @@ _______________:
 fmt:
     just format_all_justfiles
     deno fmt --ignore=./{app,package}/
+    just main just fmt
 
 [script('bash')]
 check *args:
