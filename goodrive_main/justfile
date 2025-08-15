@@ -18,3 +18,7 @@ install:
 
 gql:
     deno run --allow-all npm:@graphql-codegen/cli/graphql-codegen-esm
+
+[script('bash')]
+dev:
+    deno run -A --watch-hmr=static/,routes/ dev.ts
