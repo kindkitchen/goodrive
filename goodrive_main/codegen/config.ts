@@ -3,17 +3,16 @@ import type { CodegenConfig } from "@graphql-codegen/cli";
 const config: CodegenConfig = {
   schema: ["./type_defs/**/*.gql"],
   generates: {
-    "./codegen/out_goodrive_type_defs.ts": {
-      plugins: ["typescript", "typescript-operations", "typescript-resolvers"],
+    "./codegen/out_type_defs.ts": {
+      plugins: ["typescript", "typescript-operations"],
       config: {
-        contextType: "./codegen/GqlApiCtx.ts#GqlApiCtx",
         mappers: {},
         enumPrefix: true,
         enumsAsTypes: true,
         showUnusedMappers: true,
       },
     },
-    "./schema.gql": {
+    "./codegen/out_schema.gql": {
       plugins: ["schema-ast"],
       config: {
         includeDirectives: true,

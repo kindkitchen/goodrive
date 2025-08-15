@@ -17,7 +17,7 @@ install:
     deno install --allow-scripts
 
 gql:
-    deno run --allow-all npm:@graphql-codegen/cli/graphql-codegen-esm
+    deno run --allow-all npm:@graphql-codegen/cli/graphql-codegen-esm --config codegen/config.ts
 
 [script('bash')]
 dev:
