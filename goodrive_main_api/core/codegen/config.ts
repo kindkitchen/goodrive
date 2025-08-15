@@ -20,6 +20,5 @@ const config: CodegenConfig = {
       },
     },
   },
-  emitLegacyCommonJSImports: false,
 };
 export default config;
