@@ -1,4 +1,5 @@
 import { App, staticFiles } from "fresh";
+import { req_handler } from "./api/lib_goodrvie_main_api.ts";
 import { define, type State } from "./utils.ts";
 
 export const app = new App<State>();
@@ -11,6 +12,12 @@ app.get("/api2/:name", (ctx) => {
   return new Response(
     `Hello, ${name.charAt(0).toUpperCase() + name.slice(1)}!`,
   );
+});
+app.all("/graphql", (ctx) => {
+  return req_handler(ctx.req, {}, {
+    req: ctx.req,
+    req_url: new URL(ctx.req.url),
+  });
 });
 
 // this can also be defined via a file. feel free to delete this!
