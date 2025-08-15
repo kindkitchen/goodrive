@@ -18,3 +18,7 @@ install:
 
 gql:
     deno run --allow-all npm:@graphql-codegen/cli/graphql-codegen-esm --config core/codegen/config.ts
+
+[script("bash")]
+start port="3000":
+    PORT=3000 deno run -A main.ts

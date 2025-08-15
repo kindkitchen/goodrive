@@ -1,3 +1,7 @@
+schema {
+  query: Query
+}
+
 type ApiKey {
   _id: ID!
   bucket: Bucket!
@@ -11,6 +15,10 @@ type Bucket {
   keys: [ApiKey!]!
   user: User!
   user_id: ID!
+}
+
+type Query {
+  v: String!
 }
 
 interface Session {
