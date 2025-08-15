@@ -13,30 +13,26 @@ import '.just/format_all_justfiles.just'
 import '.just/home.just'
 
 alias v := version
+alias main := goodrive_main
+alias api := goodrive_main_api
 
 ROOT := justfile_directory()
 
 _______________:
     just --list
 
+[script("bash")]
+goodrive_main *args:
+    just app goodrive_main {{ args }}
+
+[script("bash")]
+goodrive_main_api *args:
+    just app goodrive_main_api {{ args }}
+
 [script('bash')]
 check *args:
     COMMAND="deno check {{ args }}"
 
 [script('bash')]
-main_api *args="":
-    just app main_api {{ args }}
-
-alias api := main_api
-
-[script('bash')]
-main_ui *args="":
-    just app main_ui {{ args }}
-
-alias ui := main_ui
-
-[script('bash')]
 fmt:
     just format_all_justfiles
-    just ui just fmt
-    just api just fmt

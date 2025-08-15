@@ -4,7 +4,7 @@ _:
 
 # TODO: complete with your paths to .version json file splitting via space
 
-export JSON_FILES_WITH_VERSION := 'main_api/deno.json main_ui/deno.json'
+export JSON_FILES_WITH_VERSION := 'goodrive_main_api/deno.json goodrive_main/deno.json'
 
 bump: _pre_bump _bump
 
