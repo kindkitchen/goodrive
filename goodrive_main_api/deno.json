@@ -1,0 +1,17 @@
+{
+  "nodeModulesDir": "auto",
+  "unstable": ["kv", "fmt-component", "cron"],
+  "imports": {
+    "effect": "npm:effect@^3.17.7"
+  },
+  "fmt": {
+    "exclude": [
+      "codegen/*"
+    ]
+  },
+  "lint": {
+    "exclude": [
+      "codegen/*"
+    ]
+  }
+}

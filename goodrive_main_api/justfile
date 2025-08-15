@@ -1,0 +1,20 @@
+import '../JUSTFILE'
+
+ROOT := `cd .. && pwd`
+
+alias i := install
+
+_:
+    just --list
+
+[script('bash')]
+fmt:
+    just --fmt
+    deno fmt
+
+[script('bash')]
+install:
+    deno install --allow-scripts
+
+gql:
+    deno run --allow-all npm:@graphql-codegen/cli/graphql-codegen-esm

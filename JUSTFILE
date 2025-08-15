@@ -36,3 +36,5 @@ check *args:
 [script('bash')]
 fmt:
     just format_all_justfiles
+    just api just fmt
+    just main just fmt
