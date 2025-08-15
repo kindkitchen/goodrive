@@ -1,7 +1,7 @@
 import type { CodegenConfig } from "@graphql-codegen/cli";
 
 const config: CodegenConfig = {
-  schema: ["./lib/goodrive_type_defs/**/*.gql"],
+  schema: ["./type_defs/**/*.gql"],
   generates: {
     "./codegen/out_goodrive_type_defs.ts": {
       plugins: ["typescript", "typescript-operations", "typescript-resolvers"],

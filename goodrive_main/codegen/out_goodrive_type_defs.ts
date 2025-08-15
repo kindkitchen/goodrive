@@ -33,11 +33,6 @@ export type Bucket = {
   user_id: Scalars['ID']['output'];
 };
 
-export type Query = {
-  __typename?: 'Query';
-  v: Scalars['String']['output'];
-};
-
 export type Session = {
   _id: Scalars['ID']['output'];
   created_at: Scalars['String']['output'];
@@ -148,7 +143,6 @@ export type ResolversTypes = {
   Boolean: ResolverTypeWrapper<Scalars['Boolean']['output']>;
   Bucket: ResolverTypeWrapper<Bucket>;
   ID: ResolverTypeWrapper<Scalars['ID']['output']>;
-  Query: ResolverTypeWrapper<{}>;
   Session: ResolverTypeWrapper<ResolversInterfaceTypes<ResolversTypes>['Session']>;
   SessionGhost: ResolverTypeWrapper<SessionGhost>;
   SessionNormal: ResolverTypeWrapper<SessionNormal>;
@@ -162,7 +156,6 @@ export type ResolversParentTypes = {
   Boolean: Scalars['Boolean']['output'];
   Bucket: Bucket;
   ID: Scalars['ID']['output'];
-  Query: {};
   Session: ResolversInterfaceTypes<ResolversParentTypes>['Session'];
   SessionGhost: SessionGhost;
   SessionNormal: SessionNormal;
@@ -184,10 +177,6 @@ export type BucketResolvers<ContextType = GqlApiCtx, ParentType extends Resolver
   user?: Resolver<ResolversTypes['User'], ParentType, ContextType>;
   user_id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
-};
-
-export type QueryResolvers<ContextType = GqlApiCtx, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
-  v?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
 };
 
 export type SessionResolvers<ContextType = GqlApiCtx, ParentType extends ResolversParentTypes['Session'] = ResolversParentTypes['Session']> = {
@@ -225,7 +214,6 @@ export type UserResolvers<ContextType = GqlApiCtx, ParentType extends ResolversP
 export type Resolvers<ContextType = GqlApiCtx> = {
   ApiKey?: ApiKeyResolvers<ContextType>;
   Bucket?: BucketResolvers<ContextType>;
-  Query?: QueryResolvers<ContextType>;
   Session?: SessionResolvers<ContextType>;
   SessionGhost?: SessionGhostResolvers<ContextType>;
   SessionNormal?: SessionNormalResolvers<ContextType>;
