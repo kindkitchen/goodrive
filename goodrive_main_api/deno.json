@@ -8,12 +8,12 @@
   },
   "fmt": {
     "exclude": [
-      "codegen/*"
+      "core/codegen/*"
     ]
   },
   "lint": {
     "exclude": [
-      "codegen/*"
+      "core/codegen/*"
     ]
   }
 }

@@ -3,7 +3,7 @@ import type { CodegenConfig } from "@graphql-codegen/cli";
 const config: CodegenConfig = {
   schema: ["./type_defs/**/*.gql"],
   generates: {
-    "./core/codegen/type_defs_out.ts": {
+    "./core/codegen/out_type_defs.ts": {
       plugins: ["typescript", "typescript-operations", "typescript-resolvers"],
       config: {
         contextType: "./core/codegen/GqlApiCtx.ts#GqlApiCtx",
@@ -13,7 +13,7 @@ const config: CodegenConfig = {
         showUnusedMappers: true,
       },
     },
-    "./core/codegen/schema.gql": {
+    "./core/codegen/out_schema.gql": {
       plugins: ["schema-ast"],
       config: {
         includeDirectives: true,
