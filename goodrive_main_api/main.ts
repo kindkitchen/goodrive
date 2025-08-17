@@ -1,21 +1,28 @@
+import { Effect } from "effect";
 import { GqlApiCtx } from "./core/codegen/GqlApiCtx.ts";
-import { req_handler } from "./core/lib_goodrvie_main_api.ts";
+import { lib_goodrive_main_api } from "./core/lib_goodrvie_main_api.ts";
 
-Deno.serve({
-  port: +(Deno.env.get("PORT") || 3333),
-}, (req) => {
-  const req_url = new URL(req.url);
+const main = Effect.gen(function* () {
+  const { req_handler } = yield* lib_goodrive_main_api;
 
-  if (req_url.pathname === "/graphql") {
-    return req_handler(
-      req,
-      {},
-      {
+  Deno.serve({
+    port: +(Deno.env.get("PORT") || 3333),
+  }, (req) => {
+    const req_url = new URL(req.url);
+
+    if (req_url.pathname === "/graphql") {
+      return req_handler(
         req,
-        req_url,
-      } satisfies GqlApiCtx,
-    );
-  }
+        {},
+        {
+          req,
+          req_url,
+        } satisfies GqlApiCtx,
+      );
+    }
 
-  return new Response("Not found", { status: 404 });
+    return new Response("Not found", { status: 404 });
+  });
 });
+
+await Effect.runPromise(main);

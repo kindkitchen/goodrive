@@ -21,4 +21,4 @@ gql:
 
 [script("bash")]
 start port="3000":
-    PORT=3000 deno run -A main.ts
+    PORT={{ port }} deno run -A main.ts
