@@ -8,5 +8,7 @@ tailwind(builder);
 if (Deno.args.includes("build")) {
   await builder.build();
 } else {
-  await builder.listen(() => import("./main.ts"));
+  await builder.listen(() => import("./main.ts"), {
+    port: +(Deno.env.get("PORT") || 9000),
+  });
 }

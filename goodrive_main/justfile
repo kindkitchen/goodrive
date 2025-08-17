@@ -20,5 +20,5 @@ gql:
     deno run --allow-all npm:@graphql-codegen/cli/graphql-codegen-esm --config codegen/config.ts
 
 [script('bash')]
-dev:
-    deno run -A --watch-hmr=static/,routes/ dev.ts
+dev port="9000":
+    PORT={{ port }} deno run -A --watch-hmr=static/,routes/ dev.ts
